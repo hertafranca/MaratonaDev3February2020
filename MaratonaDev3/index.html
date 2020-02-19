@@ -1,41 +1,36 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Donate Blood and save lifes!</title>
   <link rel="stylesheet" href="style.css">
+  <script>
+    function changeBloodBag(kind) {
+      var logoElement = document.getElementById("bloodBag");
+      logoElement.src = "./" + kind + ".jpg";
+    }
+
+  </script>
 </head>
 
-<body> 
+<body>
+
   <header>
-    <img 
-    class="logo"
-    src="./blood.jpg"
-    >
+    <img id="bloodBag" onmousemove="changeBloodBag('blood2')" onmouseout="changeBloodBag('blood')" class="logo"
+      src="./blood.jpg">
     <h1>Your donation is important!</h1>
     <p>You can even save three lives with just one donation.</p>
     <p>More than 38.000 donation are needed every day.</p>
     <p>Only 1,9% of the Brazilian population, donates blood.</p>
-    <button><strong> I  want to save lifes </strong></button> 
+    <button><strong> I want to save lifes </strong></button>
   </header>
 
-  <section class="form">
+  <section class="form hide">
     <h3><strong>Enter the Donors List</strong> </h3>
     <form action="/">
-      <input
-          type="text"
-          name="name"
-          placeholder="Full Name"
-      >
-      <input
-          type="text"
-          name="email"
-          placeholder="Email"
-      >
-      <input
-          type="text"]
-          name="blood"
-          placeholder="Blood Type "
-      >
+      <input type="text" name="name" placeholder="Full Name">
+      <input type="text" name="email" placeholder="Email">
+      <input type="text" ] name="blood" placeholder="Blood Type ">
       <button>I want to help people</button>
     </form>
   </section>
@@ -47,32 +42,35 @@
 
       <div class="donor">
         <div class="blood">O+</div>
-        <Pdonor>Herta França</P>
+        <Pdonor>Herta França</Pdonor>
       </div>
 
       <div class="donor">
         <div class="blood">A+</div>
-        <Pdonor>Gustavo Davi</P>
+        <Pdonor>Gustavo Davi</Pdonor>
       </div>
 
       <div class="donor">
         <div class="blood">AB+</div>
-        <Pdonor>Diego Fernandes</P>
+        <Pdonor>Diego Fernandes</Pdonor>
       </div>
 
       <div class="donor">
         <div class="blood">B+</div>
-        <Pdonor>Mayk Brito</P>
+        <Pdonor>Mayk Brito</Pdonor>
       </div>
 
     </section>
   </main>
-  
+
   <footer id="link-footer">
-  
+
     <a href="https://rocketseat.com.br/" target="_blank"><strong>With</strong> 💖 <strong>RocketSeat</strong>!</a>
-    
+
   </footer>
-    
-</body> 
+  <script src="script.js">
+
+  </script>
+</body>
+
 </html>
