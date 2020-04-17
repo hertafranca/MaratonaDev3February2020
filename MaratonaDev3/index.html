@@ -1,74 +1,65 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Donate Blood and save lifes!</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      function changeBloodBag(kind) {
+        var logoElement = document.getElementById("bloodBag");
+        logoElement.src = kind + ".jpg";
+      }
+    </script>
+  </head>
 
-<head>
-  <title>Donate Blood and save lifes!</title>
-  <link rel="stylesheet" href="/style.css">
-  <script>
-    function changeBloodBag(kind) {
-      var logoElement = document.getElementById("bloodBag");
-      logoElement.src = "./" + kind + ".jpg";
-    }
+  <body>
+    <header>
+      <img
+        id="bloodBag"
+        onmousemove="changeBloodBag('blood2')"
+        onmouseout="changeBloodBag('blood')"
+        class="logo"
+        src="blood.jpg"
+      />
+      <h1>Your donation is important!</h1>
+      <p>You can even save three lives with just one donation.</p>
+      <p>More than 38.000 donation are needed every day.</p>
+      <p>Only 1,9% of the Brazilian population, donates blood.</p>
+      <button><strong> I want to save lifes </strong></button>
+    </header>
 
-  </script>
-</head>
- 
-<body>
+    <section class="form hide">
+      <h3><strong>Enter the Donors List</strong></h3>
 
-  <header>
-    <img id="bloodBag" onmousemove="changeBloodBag('blood2')" onmouseout="changeBloodBag('blood')" class="logo"
-      src="./blood.jpg">
-    <h1>Your donation is important!</h1>
-    <p>You can even save three lives with just one donation.</p>
-    <p>More than 38.000 donation are needed every day.</p>
-    <p>Only 1,9% of the Brazilian population, donates blood.</p>
-    <button><strong> I want to save lifes </strong></button>
-  </header>
+      <form action="/" method="POST">
+        <input type="text" name="name" placeholder="Full Name" />
 
-  <section class="form hide">
-    <h3><strong>Enter the Donors List</strong> </h3>
-   
-    <form action="/" method="POST">
-      <input type="text" 
-      name="name" 
-      placeholder="Full Name">
+        <input type="text" name="email" placeholder="Email" />
 
-      <input type="text" 
-      name="email"
-      placeholder="Email">
+        <input type="text" name="blood" placeholder="Blood Type " />
 
-      <input type="text" 
-      name="blood" 
-      placeholder="Blood Type ">
+        <button>I want to help people</button>
+      </form>
+    </section>
 
-      <button>I want to help people</button>
-    </form>
-  </section>
+    <main>
+      <h2>Lastest <span>Donors</span>:</h2>
 
-  <main>
-    <h2>Lastest <span>Donors</span>:</h2>
-
-    <section class="donors">
-
+      <section class="donors">
         {% for donor in donors%}
-
         <div class="donor">
           <div class="blood">{{donor.blood}}</div>
           <Pdonor>{{donor.name}}</Pdonor>
         </div>
- 
+
         {%endfor%}
-    </section>
-  </main>
+      </section>
+    </main>
 
-  <footer id="link-footer">
-
-    <a href="https://rocketseat.com.br/" target="_blank"><strong>With</strong> 💖 <strong>RocketSeat</strong>!</a>
-
-  </footer>
-  <script src="/script.js">
-
-  </script>
-</body>
-
+    <footer id="link-footer">
+      <a href="https://rocketseat.com.br/" target="_blank"
+        ><strong>With</strong> 💖 <strong>RocketSeat</strong>!</a
+      >
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>
